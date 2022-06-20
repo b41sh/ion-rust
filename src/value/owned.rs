@@ -457,7 +457,7 @@ pub enum OwnedValue {
 #[derive(Debug, Clone)]
 pub struct OwnedElement {
     annotations: Vec<OwnedSymbolToken>,
-    value: OwnedValue,
+    pub value: OwnedValue,
 }
 
 impl OwnedElement {
@@ -560,6 +560,12 @@ impl From<String> for OwnedElement {
 impl From<OwnedSymbolToken> for OwnedElement {
     fn from(sym_val: OwnedSymbolToken) -> Self {
         OwnedValue::Symbol(sym_val).into()
+    }
+}
+
+impl From<OwnedSequence> for OwnedElement {
+    fn from(list_val: OwnedSequence) -> Self {
+        OwnedValue::List(list_val).into()
     }
 }
 

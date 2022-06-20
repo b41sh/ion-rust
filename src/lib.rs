@@ -20,6 +20,7 @@ pub mod result;
 pub mod binary;
 pub mod data_source;
 pub mod raw_reader;
+pub mod ser;
 pub mod text;
 pub mod types;
 pub mod value;
@@ -64,6 +65,9 @@ pub use text::raw_text_writer::RawTextWriterBuilder;
 
 pub use result::IonError;
 pub use result::IonResult;
+
+pub use ser::Serializer;
+pub use ser::SerializerOptions;
 
 /// Re-exports of third party dependencies that are part of our public API.
 ///
